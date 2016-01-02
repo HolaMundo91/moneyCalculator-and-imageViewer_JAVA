@@ -1,0 +1,11 @@
+libreria para crear graficos
+----------------------------
+
+-importar libreria
+	-click derecho en el proyecto, propiedades, add jar/folder
+
+-Pasos
+	-1º creamos la ventana
+	-2º un panel
+	-3º un chart - jfreechart
+	-4º dataset
