@@ -10,7 +10,8 @@ public class Kata4 {
         
         String name = "C:\\Users\\usuario\\Documents\\NetBeansProjects\\kata4\\DATA\\emails.txt";
         ArrayList<String> mailArray = MailListReader.read(name);
-        System.out.println( mailArray.size() );
+        Histogram<String> histograma = MailHistogramBuilder.build(mailArray);
+        new HistogramDisplay(histograma).execute();
         
     }
 }
