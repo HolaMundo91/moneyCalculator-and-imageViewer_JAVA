@@ -21,14 +21,21 @@ public class HistogramPanel extends JPanel implements HistogramDisplay {
     
     @Override
     public Histogram histogram() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return histogram;
     }
 
     @Override
     public void show(Histogram histogram) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.histogram = histogram;
+        this.reload();
     }
 
+    private void reload() {
+        this.removeAll();
+        this.add(new ChartPanel(createChart(createDataset(histogram))));
+        this.revalidate();
+    }
+    
     private JFreeChart createChart(DefaultCategoryDataset dataSet) {
         JFreeChart chart = ChartFactory.createBarChart(null, 
                 "",
@@ -47,6 +54,8 @@ public class HistogramPanel extends JPanel implements HistogramDisplay {
         return dataSet;
 
     }
+
+    
 
     
 }
