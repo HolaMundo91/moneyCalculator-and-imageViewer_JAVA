@@ -1,4 +1,4 @@
-package Kata7v5.model;
+package kata7v5.model;
 
 public interface Attribute <T,S>{
     S get (T item);

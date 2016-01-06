@@ -1,8 +1,8 @@
-package Kata7v5.view;
+package kata7v5.view;
 
 import java.util.List;
-import Kata7v5.model.Attribute;
-import Kata7v5.model.Histogram;
+import kata7v5.model.Attribute;
+import kata7v5.model.Histogram;
 
 public class HistogramBuilder<T> {
 

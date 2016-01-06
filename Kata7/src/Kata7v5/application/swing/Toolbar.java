@@ -1,9 +1,5 @@
-package Kata7v5.application;
+package kata7v5.application.swing;
 
-import Kata7v5.control.Command;
-import Kata7v5.model.Attribute;
-import Kata7v5.view.AttributeDialog;
-import Kata7v5.view.PopulationDialog;
 import java.awt.FlowLayout;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
@@ -12,19 +8,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+import kata7v5.control.Command;
+import kata7v5.model.Attribute;
+import kata7v5.view.AttributeDialog;
+import kata7v5.view.PopulationDialog;
 
 public class Toolbar extends JPanel implements PopulationDialog, AttributeDialog {
-
-    private final Map <String,Command> commands;
-    private final List <Attribute> attributes = new ArrayList <>();
+    
+    private final Map<String,Command> commands;
+    private final List<Attribute> attributes = new ArrayList<>();
     private JComboBox combo;
     
     public Toolbar(Map<String, Command> commands) {
-        super (new FlowLayout());
+        super(new FlowLayout());
+        
         this.commands = commands;
         this.add(mailDomainsAttribute());
         this.add(firstChartAttribute());
@@ -34,18 +37,18 @@ public class Toolbar extends JPanel implements PopulationDialog, AttributeDialog
     
     @Override
     public List population() {
-        try{
-            return MailReader.read("C:\\Users\\usuario\\Documents\\NetBeansProjects\\Kata7\\DATA\\emails.txt");
-        }catch( IOException ex ){
+        try {
+            return MailReader.read("emails.txt");
+        } catch (IOException ex) {
             return new ArrayList();
         }
     }
-    
+
     @Override
     public Attribute attribute() {
         return attributes.get(combo.getSelectedIndex());
     }
-
+    
     private String[] options(String... options) {
         return options;
     }
@@ -53,36 +56,31 @@ public class Toolbar extends JPanel implements PopulationDialog, AttributeDialog
     private void add (Attribute attribute){
         attributes.add(attribute);
     }
+
     
     private Attribute mailDomainsAttribute() {
         return new Attribute<Person,String>(){
-
             @Override
             public String get(Person item) {
                 return item.getMail().split("@")[1];
             }
-        };
+    };
     }
-
-    private Attribute firstChartAttribute() {
-        return new Attribute<Person,Character>(){
-
-            @Override
-            public Character get(Person item) {
-                return item.getMail().charAt(0);
-            }
-        };
-    }
-
+        
+        
     private JComboBox comboBox() {
         combo = new JComboBox(options("Mail domains","First char"));
         return combo;
     }
 
+
+    
+
+    
+    
     private JButton calculateButton() {
         JButton button = new JButton("Calculate");
         button.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 commands.get("calculate").execute();
@@ -90,5 +88,18 @@ public class Toolbar extends JPanel implements PopulationDialog, AttributeDialog
         });
         return button;
     }
+
+    private Attribute firstChartAttribute() {
+        return new Attribute<Person, Character>(){
+            @Override
+            public Character get(Person item) {
+                return item.getMail().charAt(0);
+            }
+        };
+    }
+    
+
+  
+    
     
 }

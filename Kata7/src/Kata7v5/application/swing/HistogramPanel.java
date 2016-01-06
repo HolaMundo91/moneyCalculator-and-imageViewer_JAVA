@@ -1,9 +1,9 @@
-package Kata7v5.application;
+package kata7v5.application.swing;
 
-import Kata7v5.model.Histogram;
-import Kata7v5.view.HistogramDisplay;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import kata7v5.model.Histogram;
+import kata7v5.view.HistogramDisplay;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -13,12 +13,12 @@ import org.jfree.ui.ApplicationFrame;
 
 public class HistogramPanel extends JPanel implements HistogramDisplay {
 
-    private Histogram<String> histogram;
+    private  Histogram<String> histogram;
 
     public HistogramPanel() {
         super(new BorderLayout());
     }
-    
+
     @Override
     public Histogram histogram() {
         return histogram;
@@ -26,23 +26,12 @@ public class HistogramPanel extends JPanel implements HistogramDisplay {
 
     @Override
     public void show(Histogram histogram) {
-        this.histogram = histogram;
+        this.histogram=histogram;
         this.reload();
     }
 
-    private void reload() {
-        this.removeAll();
-        this.add(new ChartPanel(createChart(createDataset(histogram))));
-        this.revalidate();
-    }
-    
     private JFreeChart createChart(DefaultCategoryDataset dataSet) {
-        JFreeChart chart = ChartFactory.createBarChart(null, 
-                "",
-                "Nº emails",
-                dataSet,
-                PlotOrientation.VERTICAL,
-                false, false, false);
+        JFreeChart chart = ChartFactory.createBarChart(null, "Domains", "Nº emails", dataSet, PlotOrientation.VERTICAL, false, false, false);
         return chart;
     }
 
@@ -55,7 +44,12 @@ public class HistogramPanel extends JPanel implements HistogramDisplay {
 
     }
 
-    
+    private void reload() {
+        this.removeAll();
+        this.add(new ChartPanel(createChart(createDataset(histogram))));
+        this.revalidate();
+    }
 
-    
+   
+
 }

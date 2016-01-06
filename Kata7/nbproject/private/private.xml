@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/application/swing/Toolbar.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/application/swing/HistogramPanel.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/control/CalculateCommand.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/control/Command.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/model/Attribute.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/model/Histogram.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/view/PopulationDialog.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/view/HistogramBuilder.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7/Application.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/view/AttributeDialog.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/view/HistogramDisplay.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/application/swing/Person.java</file>
+            <file>file:/C:/Users/Juan%20Antonio/Documents/NetBeansProjects/Kata7/src/kata7v5/application/swing/MailReader.java</file>
+        </group>
+    </open-files>
 </project-private>
