@@ -19,8 +19,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Application extends JFrame {
-
-    // Esto es igual en todas las interfaces de usuario
     
     private final Map<String,Command> commands = new HashMap<>();
     
@@ -31,7 +29,6 @@ public class Application extends JFrame {
     private ImageDisplay imageDisplay;
 
     public Application() {
-        // Crear la Interfaz de Usuario y los comandos
         this.deployUI();
         this.createCommands();
     }
@@ -57,8 +54,6 @@ public class Application extends JFrame {
     }
 
     private Image image() {
-        // El directorio habría que sacarlo de otro sitio (pasarlo por parámetros,
-        // pedírselo al usuario...)
         return new FileImageReader("C:\\Users\\Admin\\Pictures\\Fondos").read();
     }    
 
@@ -70,13 +65,13 @@ public class Application extends JFrame {
     }
 
     private JButton nextButton() {
-        JButton button = new JButton(">");
+        JButton button = new JButton("Siguiente");
         button.addActionListener(doCommand("next"));
         return button;
     }
 
     private JButton prevButton() {
-        JButton button = new JButton("<");
+        JButton button = new JButton("Anterior");
         button.addActionListener(doCommand("prev"));
         return button;
     }
